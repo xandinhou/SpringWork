@@ -24,8 +24,5 @@ public class TestConfig implements CommandLineRunner {
 		Empregado e2 = new Empregado(null, "xxx.xxx.xxx-xx","Luis F",20, 2950.11);
 		
 		empregadoRepository.saveAll(Arrays.asList(e1,e2));
-	}
-	
-	
-	
+	}	
 }

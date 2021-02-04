@@ -21,6 +21,8 @@ public class Empregado implements Serializable {
 	private Integer idade;
 	private Double salario;
 	
+	public Empregado() {}
+	
 	public Empregado(Long id, String cpf, String nome, Integer idade, Double salario) {
 		super();
 		this.id = id;
