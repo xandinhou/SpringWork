@@ -1,11 +1,14 @@
 package com.example.trabalho.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Empregado implements Serializable {
@@ -20,6 +23,11 @@ public class Empregado implements Serializable {
 	private String nome;
 	private Integer idade;
 	private Double salario;
+	
+	@OneToMany(mappedBy = "emp")
+	private List<Dependente> dependentes =  new ArrayList<>();
+	
+	
 	
 	public Empregado() {}
 	
@@ -72,6 +80,10 @@ public class Empregado implements Serializable {
 		this.salario = salario;
 	}
 
+	public List<Dependente> getDependentes() {
+		return dependentes;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -96,6 +108,8 @@ public class Empregado implements Serializable {
 			return false;
 		return true;
 	}
+
+	
 	
 	
 	
