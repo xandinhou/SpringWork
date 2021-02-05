@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Empregado implements Serializable {
 
@@ -24,6 +26,7 @@ public class Empregado implements Serializable {
 	private Integer idade;
 	private Double salario;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "emp")
 	private List<Dependente> dependentes =  new ArrayList<>();
 	
