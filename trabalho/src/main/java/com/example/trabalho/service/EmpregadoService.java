@@ -33,4 +33,18 @@ public class EmpregadoService {
 	public void delete(Long id) {
 		repository.deleteById(id);
 	}
+	
+	public Empregado update(Long id, Empregado obj) {
+		Empregado entity = repository.getOne(id);
+		updateData(entity,obj);
+		return repository.save(entity);
+	}
+
+	private void updateData(Empregado entity, Empregado obj) {
+		entity.setCpf(obj.getCpf());
+		entity.setIdade(obj.getIdade());
+		entity.setNome(obj.getNome());
+		entity.setSalario(obj.getSalario());
+		
+	}
 }

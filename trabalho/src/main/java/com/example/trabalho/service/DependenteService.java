@@ -25,4 +25,26 @@ public class DependenteService {
 		
 		return obj.get();
 	}
+	
+	public Dependente insert(Dependente obj) {
+		return repository.save(obj);
+	}
+	
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
+	
+	public Dependente update(Long id, Dependente obj) {
+		Dependente entity = repository.getOne(id);
+		updateData(entity,obj);
+		return repository.save(entity);
+	}
+
+	private void updateData(Dependente entity, Dependente obj) {
+		entity.setCpfEmpregado(obj.getCpfEmpregado());
+		entity.setDataNascimento(obj.getDataNascimento());
+		entity.setEmp(obj.getEmp());
+		entity.setGrauParentesco(obj.getGrauParentesco());
+		entity.setNome(obj.getNome());
+	}
 }
