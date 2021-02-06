@@ -1,7 +1,9 @@
 # Trabalho Utilizando Spring
 
 ## Alunos:
+
 Alexandre Abreu Da Silva
+
 Luis Felipe
 
 ## Rotas:
@@ -25,8 +27,6 @@ Luis Felipe
 /dependentes/ID > Atualiza o dependente com ID passando um parametro body json
 
 ### Delete:
-
-## UPDATE:
 
 /empregados/ID > Deleta o empregado ID
 
