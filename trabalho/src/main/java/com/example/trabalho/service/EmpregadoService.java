@@ -25,4 +25,8 @@ public class EmpregadoService {
 		
 		return obj.get();
 	}
+	
+	public Empregado insert(Empregado obj) {
+		return repository.save(obj);
+	}
 }
